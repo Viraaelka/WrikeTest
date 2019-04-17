@@ -10,7 +10,7 @@ public class HomeWrikePage {
     private WebDriver driver;
     public Randomizer randomArray = new Randomizer();
 
-    /*-----------------------Home page variables----------------------------------------------*/
+    /*-----------------------Home page variables---------------------------------------------------------*/
 
     @FindBy(xpath = "//div[@class='r']//button")
     WebElement getStartedBtn;
@@ -18,7 +18,7 @@ public class HomeWrikePage {
     @FindBy(xpath = "//h1[contains(., 'Leading')]")
     WebElement homePageHeader;
 
-    /*-----------------------Start Free Trial valiables---------------------------------------*/
+    /*-----------------------Start Free Trial valiables--------------------------------------------------*/
 
     @FindBy(xpath = "//form[@action='/']/div[contains(., 'Start Free trial')]")
     WebElement headerSFT;
@@ -32,7 +32,7 @@ public class HomeWrikePage {
     @FindBy(xpath = "//label//span")
     WebElement errorMessage;
 
-    /*--------------------QA Section variables---------------------------------------------*/
+    /*--------------------QA Section variables----------------------------------------------------------*/
 
     @FindBy(xpath = "//form[@class='survey-form']/h3")
     WebElement QASectionHeader;
@@ -75,7 +75,7 @@ public class HomeWrikePage {
     @FindBy(xpath = "//li[@class='wg-footer__social-item']/a[@href='https://twitter.com/wrike']")
     WebElement twitterBtn;
 
-    /*-------------------------Methods-------------------------------------------------------*/
+    /*-------------------------Methods------------------------------------------------------------------------*/
 
     public HomeWrikePage(WebDriver driver) {
         this.driver = driver;
@@ -90,7 +90,7 @@ public class HomeWrikePage {
         String[] line = homePageHeader.getText().split("\n");
         return line[0].trim();
     }
-    /* ----------------------Start Free Trial methods----------------------------------------*/
+    /* ----------------------Start Free Trial methods-------------------------------------------------------*/
 
     public void enterRandomEmail(String testEmail) {
         if (emailTextField.isDisplayed()) {
@@ -112,7 +112,7 @@ public class HomeWrikePage {
         return errorMessage.getText();
     }
 
-    /* ----------------------QASection methods---------------------------------------------*/
+    /* ----------------------QASection methods--------------------------------------------------------------*/
 
     public String getQASectionHeader() {
         return QASectionHeader.getText();
