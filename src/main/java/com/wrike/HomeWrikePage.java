@@ -1,5 +1,6 @@
 package com.wrike;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 public class HomeWrikePage {
     private WebDriver driver;
     public Randomizer randomArray = new Randomizer();
-
+    private JavascriptExecutor jExec = (JavascriptExecutor)driver;
     /*-----------------------Home page variables---------------------------------------------------------*/
 
     @FindBy(xpath = "//div[@class='r']//button")
@@ -164,7 +165,8 @@ public class HomeWrikePage {
 
     public void clickTwitterButton() {
         if (twitterBtn.isDisplayed() || twitterBtn.isEnabled())
-            twitterBtn.click();
+           // jExec.executeScript("arguments[0].click();", twitterBtn);
+            jExec.executeScript("arguments[0].dispatchEvent(new Event(\'click\'))", twitterBtn);
     }
 
     /*------------------------Getters for QA section buttons----------------------------------------------*/

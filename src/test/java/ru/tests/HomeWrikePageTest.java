@@ -117,7 +117,7 @@ public class HomeWrikePageTest extends BeforeAfterSetup{
     @Test
     public void clickTwitterBtn() {
         System.out.println("Unfortunately, the Twitter test does not work");
-       /*
+        /*
         logingToQAsection();
         homeWrikePage.clickTwitterButton();
         */
